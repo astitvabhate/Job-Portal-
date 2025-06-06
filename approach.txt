@@ -1,0 +1,5 @@
+so im starting this project where i want to 
+  Build a basic Job Board where companies can post jobs and users can browse them.
+
+
+  uploading this on github so anyone can access it. 
