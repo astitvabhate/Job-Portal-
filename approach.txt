@@ -3,3 +3,21 @@ so im starting this project where i want to
 
 
   uploading this on github so anyone can access it. 
+
+ insitialling the project starting with Frontend and then moving to backend 
+ setting up the project with React and Tailwind CSS for styling. 
+ 
+ 
+ setup done 
+ 
+
+ frontend for Home page where job listings are displayed in grid form.
+
+  made a basic layout of form where companies can post jobs.
+
+  if anyone clicks on a view button it will take them to a page where they can see the details of the job.
+  also added a search bar to filter jobs based on title or company name.
+
+  so far the frontend is looking good.
+
+  now moving to the backend part of the project where i will set up a Node.js server with Express. (after some time)
