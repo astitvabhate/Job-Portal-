@@ -6,12 +6,12 @@ import HomePage from '../pages/HomePage.jsx'
 import Postings from '../components/postings.jsx'
 import JobDetails from '../pages/JobDetails.jsx'
 import PostJob from '../pages/PostJob.jsx'
+import { BrowserRouter } from 'react-router'
 
 createRoot(document.getElementById('root')).render(
+<BrowserRouter>
   <StrictMode>
-    <HomePage />
-    <Postings /> 
-    <JobDetails/>
-    <PostJob/>
-  </StrictMode>,
+    <App />
+  </StrictMode>
+</BrowserRouter>
 )

@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route } from 'react-router-dom'
+import Postings from '../components/postings.jsx'
+import HomePage from '../pages/HomePage.jsx'
+import JobDetails from '../pages/JobDetails.jsx'
+import PostJob from '../pages/PostJob.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div className='text-5xl font-bold'>hello this is app...</div>
-    </>
-  )
+return(
+  <>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/job-details/:id" element={<JobDetails />} />
+      <Route path="/post-job" element={<PostJob />} />
+    </Routes>
+  </>
+)
 }
 
 export default App
