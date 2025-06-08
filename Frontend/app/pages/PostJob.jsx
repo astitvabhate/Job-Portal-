@@ -40,7 +40,7 @@ const PostJob = () => {
           <span className="cursor-pointer hover:text-red-600" onClick={() => navigate('/')}><IoCloseCircleSharp size={30} /></span>
         </div>
         <p className="text-lg text-gray-600 mb-4">Fill out the form below to post your job listing and connect with potential candidates.</p>
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6 " onSubmit={handleSubmit}>
           <div>
             <label className="block text-sm font-medium text-gray-700">Job Title</label>
             <input required type="text" name="title" value={formData.title} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />

@@ -5,17 +5,17 @@ const Job = require('../models/job_models.js');
 
 router.use(express.json());
 
-// GET /api/jobs – List all jobs
+// GET /api/jobs – Show all jobs
 router.get('/', async (req, res) => {
   try {
-    const jobs = await Job.find({}, 'title company location'); // only select 3 fields
+    const jobs = await Job.find({}, 'title company location'); 
     res.json(jobs);
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
   }
 });
 
-// GET /api/jobs/:id – Get a single job
+// GET /api/jobs/:id – Get a single job details
 router.get('/:id', async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// POST /api/jobs – Create a new job
+// POST /api/jobs – Create a new job Post
 router.post(
   '/',
   [

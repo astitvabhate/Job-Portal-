@@ -21,3 +21,25 @@ so im starting this project where i want to
   so far the frontend is looking good.
 
   now moving to the backend part of the project where i will set up a Node.js server with Express. (after some time)
+
+next day what i did was set up the Node.js server with Express and connected it to a MongoDB database using Mongoose.
+
+  created models for Job and User to handle job postings and user data.
+
+  implemented routes for creating, reading, updating, and deleting job postings.
+
+  also added authentication using JWT so that only registered companies can post jobs.
+
+  now users can view job listings, view job details, and companies can post new jobs.
+  added functionality to edit and delete job postings by the companies.
+
+  finally, tested the API endpoints using Postman to ensure everything is working as expected.
+
+  added functionality to allow companies to post new jobs and edit existing ones.
+
+  finally, deployed the backend on Heroku and connected it with the frontend hosted on Vercel.
+
+  now the project is live and anyone can access it on GitHub and view the job board.
+
+  
+
