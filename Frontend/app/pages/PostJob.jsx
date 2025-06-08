@@ -3,6 +3,10 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const PostJob = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -20,15 +24,13 @@ const PostJob = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log('Submitting job data:', formData);
-      
       await axios.post('http://localhost:5000/api/jobs', formData);
-      alert('Job posted successfully!');
-      navigate('/');
+      toast.success('✅ Job posted successfully!');
+      setTimeout(() => navigate('/'), 2000);
     } catch (error) {
-      alert('Error posting job: ' + error.message);
+      toast.error('❌ Error posting job: ' + error.message);
     }
-  }
+  };
 
   return (
     <div>
@@ -41,29 +43,30 @@ const PostJob = () => {
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label className="block text-sm font-medium text-gray-700">Job Title</label>
-            <input type="text" name="title" value={formData.title} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
+            <input required type="text" name="title" value={formData.title} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Company Name</label>
-            <input type="text" name="company" value={formData.company} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
+            <input required type="text" name="company" value={formData.company} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Location</label>
-            <input type="text" name="location" value={formData.location} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
+            <input required type="text" name="location" value={formData.location} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Job Description</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" rows="4"></textarea>
+            <textarea required name="description" value={formData.description} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" rows="4"></textarea>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Requirements</label>
-            <textarea name="requirements" value={formData.requirements} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" rows="4"></textarea>
+            <textarea required name="requirements" value={formData.requirements} onChange={handleChange} className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" rows="4"></textarea>
           </div>
           <button type="submit" className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
             Post Job
           </button>
         </form>
-      </div>
+        </div>
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   )
 }
