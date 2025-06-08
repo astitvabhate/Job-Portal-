@@ -8,11 +8,20 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors());
+
+const allowedOrigins = ['https://job-portal-bice-pi.vercel.app'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
+
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://bhateastitva204:asti204@cluster0.yqx9nau.mongodb.net/Job_Postings', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
